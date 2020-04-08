@@ -1,7 +1,6 @@
 package io.seata.sample.controller;
 
 import io.seata.sample.service.AccountService;
-import java.math.BigDecimal;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -24,8 +23,8 @@ public class AccountController {
      * @return
      */
     @RequestMapping("decrease")
-    public String decrease(@RequestParam("userId") Long userId,@RequestParam("money") BigDecimal money){
-        accountServiceImpl.decrease(userId,money);
+    public String decrease(@RequestParam("userid") Integer userid,@RequestParam("money") Integer money){
+        accountServiceImpl.decrease(userid, money);
         return "Account decrease success";
     }
 }

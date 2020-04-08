@@ -1,6 +1,5 @@
 package io.seata.sample.entity;
 
-import java.math.BigDecimal;
 import lombok.Data;
 
 /**
@@ -9,57 +8,17 @@ import lombok.Data;
 @Data
 public class Account {
 
-    public Long getId() {
-		return id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
-	}
-
-	public Long getUserId() {
-		return userId;
-	}
-
-	public void setUserId(Long userId) {
-		this.userId = userId;
-	}
-
-	public BigDecimal getTotal() {
-		return total;
-	}
-
-	public void setTotal(BigDecimal total) {
-		this.total = total;
-	}
-
-	public BigDecimal getUsed() {
-		return used;
-	}
-
-	public void setUsed(BigDecimal used) {
-		this.used = used;
-	}
-
-	public BigDecimal getResidue() {
-		return residue;
-	}
-
-	public void setResidue(BigDecimal residue) {
-		this.residue = residue;
-	}
-
-	private Long id;
+	private Integer id;
 
     /**用户id*/
-    private Long userId;
+    private Integer userid;
 
     /**总额度*/
-    private BigDecimal total;
+    private Integer total;
 
     /**已用额度*/
-    private BigDecimal used;
+    private Integer used;
 
     /**剩余额度*/
-    private BigDecimal residue;
+    private Integer residue;
 }
