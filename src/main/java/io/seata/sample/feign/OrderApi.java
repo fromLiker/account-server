@@ -1,5 +1,6 @@
 package io.seata.sample.feign;
 
+import java.math.BigDecimal;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -18,5 +19,5 @@ public interface OrderApi {
      * @return
      */
     @RequestMapping("/order/update")
-    String update(@RequestParam("userid") Integer userid, @RequestParam("money") Integer money);
+    String update(@RequestParam("userId") Long userId, @RequestParam("money") BigDecimal money, @RequestParam("status") Integer status);
 }

@@ -1,5 +1,7 @@
 package io.seata.sample.service;
 
+import java.math.BigDecimal;
+
 /**
  * @author IT云清
  */
@@ -10,5 +12,5 @@ public interface AccountService {
      * @param userId 用户id
      * @param money 金额
      */
-    void decrease(Integer userid, Integer money);
+    void decrease(Long userId, BigDecimal money);
 }
