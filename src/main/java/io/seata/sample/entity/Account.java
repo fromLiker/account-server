@@ -1,25 +1,24 @@
 package io.seata.sample.entity;
 
-import java.math.BigDecimal;
 import lombok.Data;
 
 /**
- * @author IT云清
+ * @author Liker
  */
 @Data
 public class Account {
 
-    private Long id;
+    private Integer id;
 
-    /**用户id*/
-    private Long userId;
+    /**a用户id*/
+    private Integer userid;
 
-    /**总额度*/
-    private BigDecimal total;
+    /**a总额度*/
+    private Integer total;
 
-    /**已用额度*/
-    private BigDecimal used;
+    /**a已用额度*/
+    private Integer used;
 
-    /**剩余额度*/
-    private BigDecimal residue;
+    /**a剩余额度*/
+    private Integer residue;
 }

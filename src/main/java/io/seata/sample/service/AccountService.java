@@ -1,16 +1,14 @@
 package io.seata.sample.service;
 
-import java.math.BigDecimal;
-
 /**
- * @author IT云清
+ * @author Liker
  */
 public interface AccountService {
 
     /**
-     * 扣减账户余额
-     * @param userId 用户id
+     * a扣减账户余额
+     * @param userid 用户id
      * @param money 金额
      */
-    void decrease(Long userId, BigDecimal money);
+    void decrease(Integer userid, Integer money);
 }
