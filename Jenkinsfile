@@ -36,7 +36,7 @@ pipeline {
             sh 'docker image rmi ${IMAGENAME}'
           }
           sh 'docker image build -t ${IMAGENAME} .'
-          sh 'docker run -d -p 8180:8180 --name ${CONTAINERNAME} ${IMAGENAME}'
+          sh 'docker run -d -p 8181:8181 --name ${CONTAINERNAME} ${IMAGENAME}'
         }
       }
     }
