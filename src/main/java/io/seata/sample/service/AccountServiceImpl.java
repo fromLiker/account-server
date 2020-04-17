@@ -40,4 +40,17 @@ public class AccountServiceImpl implements AccountService{
         // String mes = orderApi.update(userId, money.multiply(new BigDecimal("0.09")),0);
         // LOGGER.info("修改订单状态结束：{}",mes);
     }
+    
+    /**
+     *a 正常扣减账户余额
+     * @param userid 用户id
+     * @param money 金额
+     */
+    @Override
+    public void decreasen(Integer userid, Integer money) {
+        LOGGER.info("------->扣减账户开始account中");
+        accountDao.decrease(userid,money);
+        LOGGER.info("------->扣减账户结束account中");
+    }
+    
 }

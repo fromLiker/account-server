@@ -27,4 +27,17 @@ public class AccountController {
         accountServiceImpl.decrease(userid,money);
         return "Account decrease success";
     }
+    
+    /**
+     * a正常扣减账户余额
+     * @param userid 用户id
+     * @param money 金额
+     * @return
+     */
+    @RequestMapping("decreasen")
+    public String decreasen(@RequestParam("userid") Integer userid,@RequestParam("money") Integer money){
+        accountServiceImpl.decreasen(userid,money);
+        return "Account decrease success";
+    }
+    
 }
