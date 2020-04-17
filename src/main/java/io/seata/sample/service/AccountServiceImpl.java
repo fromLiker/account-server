@@ -32,6 +32,7 @@ public class AccountServiceImpl implements AccountService{
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
+//        System.out.println(1/0);
         accountDao.decrease(userid,money);
         LOGGER.info("------->扣减账户结束account中");
 

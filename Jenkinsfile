@@ -1,7 +1,9 @@
 pipeline {
   agent none
   environment {
-    DOCKERHUBNAME = "liker163"
+    // DOCKERHUBNAME = "liker163"
+    CONTAINERNAME = "seataccount"
+    IMAGENAME = "liker163/taccount"
   }
   stages {
     stage('maven Build') {
@@ -21,8 +23,21 @@ pipeline {
     stage('docker build & push & run') {
       agent any
       steps {
-          sh 'docker image build -t ${DOCKERHUBNAME}/taccount .'
-          sh 'docker run -d -p 8181:8181 --name seataccount ${DOCKERHUBNAME}/taccount'
+        script {
+          def REMOVE_FLAG_C = sh(returnStdout: true, script: "docker container ls -q --filter name=${CONTAINERNAME}") != ""
+          echo "REMOVE_FLAG_C: ${REMOVE_FLAG_C}"
+          if(REMOVE_FLAG_C){
+            sh 'docker stop ${CONTAINERNAME}'
+            sh 'docker rm ${CONTAINERNAME}'
+          }
+          def REMOVE_FLAG_I = sh(returnStdout: true, script: "docker image ls -q ${IMAGENAME}") != ""
+          echo "REMOVE_FLAG_I: ${REMOVE_FLAG_I}"
+          if(REMOVE_FLAG_I){
+            sh 'docker image rmi ${IMAGENAME}'
+          }
+          sh 'docker image build -t ${IMAGENAME} .'
+          sh 'docker run -d -p 8180:8180 --name ${CONTAINERNAME} ${IMAGENAME}'
+        }
       }
     }
 
