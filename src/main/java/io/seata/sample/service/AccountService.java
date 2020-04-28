@@ -11,11 +11,4 @@ public interface AccountService {
      * @param money 金额
      */
     void decrease(Integer userid, Integer money);
-    
-    /**
-     * a正常扣减账户余额
-     * @param userid 用户id
-     * @param money 金额
-     */
-    void decreasen(Integer userid, Integer money);
 }
